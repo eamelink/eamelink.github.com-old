@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+{% comment %}
+
+
+
+
+For now, we'll use the 'post' page and show the latest post on the index.html page.
+
+
+
+
+{% endcomment %}
+
+{% assign post = site.posts.first %}
+
+<div id="post">
+<h1 class="postTitle"><a href="{{ post.url }}">{{ post.title }}</a></h1>
+<div class="postMeta">
+  <span class="postDate">{{ post.date  | date_to_long_string }}</span> - 
+  <span class="postAuthor">by Erik Bakker</span> 
+</div>
+{{ post.content }}
+</div>
