@@ -5,6 +5,8 @@ body {
 }
 
 /* Structure */
+
+/* Full size, maximum 990 px */
 .container {
   width: 990px;
   margin-left: auto;
@@ -27,7 +29,39 @@ body {
   font-size: 0.8em;
 }
 
-/** structure **/
+/* Between 990px and 720px, resize with sidebar at a quart of the size */
+@media all and (max-width: 990px) and (min-width: 720px) {
+  .container {
+    width: 100%;
+  }
+  
+  .main {
+    width: 74%;
+  }
+  
+  .side {
+    width: 24%;
+    float: left;
+  }
+}
+
+/* Smaller than 720 px, move sidebar below main content, and use full width */
+@media all and (max-width: 719px) {
+  .container {
+    width: 100%;
+  }
+  
+  .main {
+    width: 100%;
+  }
+  .side {
+    width: 100%;
+    border-top: 2px solid black;
+    float: left;
+  }
+}
+
+/** /structure **/
 
 .side a {
   color: #333;
