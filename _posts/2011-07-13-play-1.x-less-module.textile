@@ -1,0 +1,31 @@
+---
+layout: post
+title: LESS module for Play 1.x
+---
+
+Before the year 2011, "Lunatech":http://www.lunatech-research.com/ did not employ any frontend developers. We used to build ugly things, like only backend developers can build them. They were stable pieces of software, working fine in most senses, but ugly nonetheless. In january 2011, we hired "Egor Kloos":http://dutchcelt.nl/, an experienced UX expert. He taught us to make things that aren't atrocious, and helps us make them into nice things.
+
+One of Egor's tricks is to use "LESS":http://lesscss.org instead of CSS. Now, at that time there was a perfectly fine "SASS":http://sass-lang.com plugin for the Play Framework 1.x  that automatically converted SASS files into CSS, but no such thing for LESS. Egor would not budge and refused to switch from LESS to SASS despite my efforts, so as plan B I set out to improve our tooling and build a LESS plugin for Play 1.x.
+
+Of course, such a tool is useful for many Play developers, and we've open sourced it and put it in the Play module repository and on "Github":https://github.com/lunatech-labs/play-module-less.
+
+It is trivial to use, just place your @*.less@ files into the @public@ directory, and they will be automatically processed. For example, create a file called @public/stylesheets/style.less@, with the following contents:
+
+{% highlight css %}
+@color: red;
+h1 {
+  color: @color;
+}
+{% endhighlight %}
+
+Now, add the stylesheet to your main template in @app/views/main.html@:
+
+{% highlight html %}
+<link type="text/css" rel="stylesheet" href="@{'public/stylesheets/style.less'}" />
+{% endhighlight %}
+
+And it will work out magically.
+
+Of course, we don't want to compile the LESS files into CSS at every request, so we do some caching. The less module sets and listens to @Last-Modified@ and @ETag@ headers, so most browsers will retrieve the file only once. At the server, a compiled CSS file is stored in the cache, and automatically invalidated when the less file changes, or when one of the imported files change. So you can change your less files even while Play is running in production mode.
+
+For more information, see "Github":https://github.com/lunatech-labs/play-module-less or the "Play module repository":http://www.playframework.org/modules/less.

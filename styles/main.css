@@ -76,6 +76,47 @@ h1.postTitle a {
   margin-bottom: 25px;
 }
 
+.main p a {
+  color: #004f88;
+  text-decoration: none;
+}
+
+.main p a:visited {
+  color: #460588;
+}
+
+.main div.highlight {
+  padding-left: 15px;
+}
+
+#post {
+  border-bottom: 2px solid black;
+}
+
+#postNavigation {
+  margin: 10px 0;
+  color: #666;
+  font-size: 0.8em;
+  overflow: auto;
+  width: 100%;
+}
+
+#postNavigation a {
+  color: #333;
+}
+#postNavigation .previous {
+  float: left;
+}
+
+#postNavigation .next {
+  float: right;
+}
+
+.aboutme {
+  width: 100%;
+  overflow: auto;
+}
+
 #portrait {
   float: left;
   margin-right: 5px;
@@ -85,14 +126,13 @@ h1.postTitle a {
   min-height: 80px; /* At leat size of the image */
 }
 
-#aboutme p {
-  margin-bottom: 0; /* This thing is in a div (for the clearfix), preventing margin collapse */
-}
-
-.clearfix { /* I suck at CSS, so I use this hack */
-  clear: both;
-  height: 1px;
-  margin-top: -1px;
+/* Maybe we should do this only for small screens? */
+.main pre {
+ white-space: pre-wrap;       /* css-3 */
+ white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+ white-space: -pre-wrap;      /* Opera 4-6 */
+ white-space: -o-pre-wrap;    /* Opera 7 */
+ word-wrap: break-word;       /* Internet Explorer 5.5+ */
 }
 
 /* Between 990px and 720px, resize with sidebar at a quart of the size */

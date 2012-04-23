@@ -11,3 +11,17 @@ canonical_url: "baak"
 </div>
 {{ content }}
 </div>
+
+<div id="postNavigation"> 
+  {% if page.previous.url %} 
+    <span class="previous">
+      Previous post: <a href="{{ page.previous.url }}">{{ page.previous.title }}</a>
+    </span> 
+  {% endif %} 
+  
+  {% if page.next.url %} 
+    <span class="next">
+      Next post: <a href="{{ page.next.url }}">{{ page.next.title }}</a>
+    </span> 
+  {% endif %} 
+</div> 
