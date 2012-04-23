@@ -85,8 +85,14 @@ h1.postTitle a {
   min-height: 80px; /* At leat size of the image */
 }
 
-.clearfix {
+#aboutme p {
+  margin-bottom: 0; /* This thing is in a div (for the clearfix), preventing margin collapse */
+}
+
+.clearfix { /* I suck at CSS, so I use this hack */
   clear: both;
+  height: 1px;
+  margin-top: -1px;
 }
 
 /* Between 990px and 720px, resize with sidebar at a quart of the size */
