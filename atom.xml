@@ -1,0 +1,33 @@
+---
+layout: nil
+---
+<?xml version="1.0"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+ 
+  <title>eamelink's blog</title>
+  <link href="http://eamelink.net/"/>
+  <link type="application/atom+xml" rel="self" href="http://eamelink.net/atom.xml"/>
+  <updated>{{ site.time | date_to_xmlschema }}</updated>
+  <id>http://eamelink.net/</id>
+  <author>
+    <name>Erik Bakker</name>
+    <email>eamelink@gmx.net</email>
+    <uri>http://eamelink.net/</uri>
+  </author>
+
+  {% for post in site.posts %}
+  <entry>
+    <id>http://eamelink.net/{{ post.id }}</id>
+    <link type="text/html" rel="alternate" href="http://eamelink.net{{ post.url }}"/>
+    <title>{{ post.title | xml_escape }}</title>
+    <updated>{{ post.date | date_to_xmlschema }}</updated>
+    <author>
+      <name>Erik Bakker</name>
+      <email>eamelink@gmx.net</email>
+      <uri>http://eamelink.net/</uri>
+    </author>
+    <content type="html">{{ post.content | xml_escape }}</content>
+  </entry>
+  {% endfor %}
+ 
+</feed>
