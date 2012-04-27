@@ -76,6 +76,10 @@ h1.postTitle a {
   margin-bottom: 25px;
 }
 
+.main {
+  line-height: 1.3;
+}
+
 .main p a {
   color: #004f88;
   text-decoration: none;
@@ -87,6 +91,15 @@ h1.postTitle a {
 
 .main div.highlight {
   padding-left: 15px;
+}
+
+.main img.left {
+  float: left;
+  margin-right: 10px;
+}
+
+.main img.right {
+  float: right;
 }
 
 #post {
@@ -112,12 +125,12 @@ h1.postTitle a {
   float: right;
 }
 
-.aboutme {
+.aboutme, .aboutbook {
   width: 100%;
   overflow: auto;
 }
 
-#portrait {
+#portrait, #bookthumb {
   float: left;
   margin-right: 5px;
 }
