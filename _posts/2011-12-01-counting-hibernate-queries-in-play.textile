@@ -7,7 +7,7 @@ Play 1.2.x uses "Hibernate":http://www.hibernate.org as the default JPA implemen
 
 bq. Hibernate is an elegant, straightforward, and easy to use library. This is undeniably true for simple domain models. What about more complex ones? It turns out that in case of complex domain models we usually run into interesting performance issues.
 
-In particular, Hibernate sometimes executes way more queries than you would expect. Wegrzynowicz showed that is not just the easy to reason about and common "N+1 select problem":http://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem, but that there are some real puzzlers. You can view her presentation at the "Devoxx website":http://www.devoxx.com/display/DV11/Performance+Anti-Patterns+in+Hibernate
+In particular, Hibernate sometimes executes way more queries than you would expect. Wegrzynowicz showed that is not just the easy to reason about and common "N+1 select problem":http://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem, but that there are some real puzzlers. You can view her presentation at the "Devoxx website":http://www.devoxx.com/display/DV11/Performance+Anti-Patterns+in+Hibernate.
 
 Lord Kelvin once said "To measure is to know", and measuring the number of queries that Hibernate executes in a Play application is not something that comes out of the box. That is why I created the Play "jpa-stats":http://github.com/eamelink/play-jpastats module, which extracts various numbers from Hibernate's internals, and makes them available as template tags. After installation of the module, you can use the following tag in your templates:
 
