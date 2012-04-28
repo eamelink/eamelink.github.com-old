@@ -25,3 +25,17 @@ For now, we'll use the 'post' page and show the latest post on the index.html pa
 </div>
 {{ post.content }}
 </div>
+
+<div id="postNavigation"> 
+  {% if post.previous.url %} 
+    <span class="previous">
+      Previous post: <a href="{{ post.previous.url }}">{{ post.previous.title }}</a>
+    </span> 
+  {% endif %} 
+  
+  {% if post.next.url %} 
+    <span class="next">
+      Next post: <a href="{{ post.next.url }}">{{ post.next.title }}</a>
+    </span> 
+  {% endif %} 
+</div> 
