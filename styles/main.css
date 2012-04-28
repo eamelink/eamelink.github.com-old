@@ -100,6 +100,7 @@ h1.postTitle a {
 
 .main img.right {
   float: right;
+  margin-left: 10px;
 }
 
 #post {
@@ -173,6 +174,14 @@ h1.postTitle a {
   .main {
     width: 100%;
   }
+  
+  .main img.left, .main img.right {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
   .side {
     width: 100%;
     border-top: 2px solid black;
