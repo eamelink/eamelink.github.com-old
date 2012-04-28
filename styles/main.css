@@ -103,8 +103,14 @@ h1.postTitle a {
   margin-left: 10px;
 }
 
+.main blockquote {
+  margin: 0 0 0 10px;
+  padding-left: 10px;
+  border-left: 2px solid #555;
+}
+
 #post {
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #555;
 }
 
 #postNavigation {
