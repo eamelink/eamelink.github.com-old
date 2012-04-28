@@ -9,13 +9,13 @@ bq. Mockito is a mocking framework that tastes really good. It lets you write be
 
 Unfortunately, Mockito is slightly incompatible with Play!, for two reasons:
 
-h3. Class cache
+h3. #1 Class cache
 
 Mockito caches classes. Play! reloads classes when you make a change to your application while it is running in development mode. This means that a single class gets loaded twice. The funky thing is that it gives really interesting error messages, like @java.lang.ClassCastException: models.User cannot be cast to models.User@. This seems really odd, but it's logical when you realize that there are two different classes @models.User@ in the JVM, that just happen to have the same name. The first one is loaded when Play started, then cached by Mockito and the second one is loaded when Play reloads after a code change, but Mockito will still find the old one in the cache when it looks up the class by name.
 
 These issues can be avoided by disabling the class cache of Mockito, but that is unfortunately not possible.
 
-h3. Configuration class
+h3. #2 Configuration class
 
 Mockito uses its own ClassLoader to find instances of the @MockitoConfiguration@ class. In Play however, you work with source files, and they are only compiled when they are needed. Mockito's class loader doesn't find these configuration classes that are not compiled.
 
