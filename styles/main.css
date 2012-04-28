@@ -17,7 +17,7 @@ body {
   width: 720px;
   padding: 0;
   float: left;
-  font-size: 
+  font-size:
 }
 
 .side {
@@ -70,6 +70,11 @@ h1.postTitle a {
   text-decoration: none;
 }
 
+.post {
+  width: 100%;
+  overflow: auto;
+}
+
 .postMeta {
   font-size: 0.8em;
   color: #666;
@@ -101,6 +106,12 @@ h1.postTitle a {
 .main img.right {
   float: right;
   margin-left: 10px;
+}
+
+.main img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .main blockquote {

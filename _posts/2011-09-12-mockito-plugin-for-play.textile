@@ -1,0 +1,28 @@
+---
+layout: post
+title: Mockito module for Play 1.x
+---
+
+When writing tests in Play, it is sometimes useful to mock some classes. Nothing is provided by default, but there are some good mocking libraries for Java, of which "Mockito":http://code.google.com/p/mockito is one:
+
+bq. Mockito is a mocking framework that tastes really good. It lets you write beautiful tests with clean & simple API. Mockito doesn't give you hangover because the tests are very readable and they produce clean verification errors.
+
+Unfortunately, Mockito is slightly incompatible with Play!, for two reasons:
+
+h3. Class cache
+
+Mockito caches classes. Play! reloads classes when you make a change to your application while it is running in development mode. This means that a single class gets loaded twice. The funky thing is that it gives really interesting error messages, like @java.lang.ClassCastException: models.User cannot be cast to models.User@. This seems really odd, but it's logical when you realize that there are two different classes @models.User@ in the JVM, that just happen to have the same name. The first one is loaded when Play started, then cached by Mockito and the second one is loaded when Play reloads after a code change, but Mockito will still find the old one in the cache when it looks up the class by name.
+
+These issues can be avoided by disabling the class cache of Mockito, but that is unfortunately not possible.
+
+h3. Configuration class
+
+Mockito uses its own ClassLoader to find instances of the @MockitoConfiguration@ class. In Play however, you work with source files, and they are only compiled when they are needed. Mockito's class loader doesn't find these configuration classes that are not compiled.
+
+h3. Solutions
+
+The Play Mockito plugin ships a modified Mockito, that allows you to disable the class cache. This patch has been sent upstream, and if it's accepted, then I can release a new version of this plugin that doesn't need a modified Mockito. Further, it ships a compiled MockitoConfiguration class that will be found by the Mockito class loader.
+
+You can find the plugin on "Github":https://github.com/eamelink/play-mockito, and in the "Play! module repository":http://www.playframework.org/modules/mockito. Happy mocking!
+
+!(center)/images/mockito.jpg(Mockito Logo)!
