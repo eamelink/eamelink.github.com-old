@@ -5,10 +5,10 @@ title: Play for Scala in MEAP
 
 Play 2 is a great framework for building the next generation of web applications. The documentation is pretty good, but it's more a reference style documentation than a thorough explanation on how to put everything together and actually build the application that you envision.
 
-!(left)/images/playforscala-meap-250.jpg(Play for Scala at Manning)!:http://manning.com/hilton
+!(left)/images/playforscala-meap-250.jpg(Play for Scala at Manning)!:http://bit.ly/play4scala
 
 To fill that gap, "Peter Hilton":http://twitter.com/#!/PeterHilton and "Francisco Canedo":http://twitter.com/#!/fcanedo, two colleagues of mine and I started writing a book on Play 2, and in particular on using Scala with Play 2. We have no intention of writing the definitive guide to Play 2, but merely to write a good first book for people starting out with Play 2, and possibly with web development in general. We also assume that you have at least read a Scala tutorial so that you're not flabbergasted by Scala's syntax. We don't expect any advanced Scala knowledge, and we'll explain what we do if we use slightly more complex Scala tricks.
 
-Currently, there are four chapters available through "Manning's early access program":http://manning.com/hilton/. We hope to get a lot of feedback from readers and intend to continually improve these chapters and add more until it's a complete book that you can point your colleagues when you're introducing Play 2 in your organization!
+Currently, there are four chapters available through "Manning's early access program":http://bit.ly/play4scala. We hope to get a lot of feedback from readers and intend to continually improve these chapters and add more until it's a complete book that you can point your colleagues when you're introducing Play 2 in your organization!
 
 If you can't wait to get started, the "first chapter":http://manning.com/hilton/PfS_meap_ch01.pdf is a available for free!
