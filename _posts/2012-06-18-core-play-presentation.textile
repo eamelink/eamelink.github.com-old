@@ -1,0 +1,10 @@
+---
+layout: post
+title: Core Play 2 presentation
+---
+
+!(left)/images/coreplay.png(Core Play Presentation)!:/files/presentations/core-play.pdf
+
+Last week I did a presentation at the "Dutch Scala Enthusiasts":http://dutch-scala-enthusiasts.ning.com/ meetup, in Hilversum. Xebia provided us with a location and food, and about 25 Scala programmers showed up to discuss Play and Scala. I skipped the usual introduction to Play, and talked about the internals of Play, the lifecycle of an HTTP request in Play and about the iteratee library and websockets. Afterwards, we did a small hands-on coding session to get people started with writing WebSocket applications with Play.
+
+"Here are the slides of the presentation":/files/presentations/core-play.pdf . It was mostly talking, so you'll miss the majority but it may still be useful. I did add some notes next to the slides. A fair Scala knowledge is assumed.
